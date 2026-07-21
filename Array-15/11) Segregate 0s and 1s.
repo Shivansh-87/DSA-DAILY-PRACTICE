@@ -1,0 +1,31 @@
+int noofzero=0;
+int noofones=0;
+for(int ele:arr){
+if(ele==0) noofzero ++;
+else noofones++;
+}
+int index = 0;
+
+        for (int i = 0; i < noofzero; i++)
+            arr[index++] = 0;
+
+        for (int i = 0; i < noofones; i++)
+            arr[index++] = 1;
+
+        for (int ele : arr)
+            System.out.print(ele + " ");
+
+///////////////////////best approach //////////////////////
+int n=arr.length;
+int i=0;j=n-1;
+while(i<j){
+if(arr[i]==0) i++;
+else if(arr[j]==1) j--;
+if(i>j) break;
+if(arr[i]==1 && arr[j]==0){
+arr[i]=0;
+arr[j]=1;
+i++;
+j--;
+}
+}
